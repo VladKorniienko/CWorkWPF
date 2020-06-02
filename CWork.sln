@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CWork", "CWork.csproj", "{C86A3958-3D3C-462D-85B5-A46F726B5BBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C86A3958-3D3C-462D-85B5-A46F726B5BBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C86A3958-3D3C-462D-85B5-A46F726B5BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C86A3958-3D3C-462D-85B5-A46F726B5BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C86A3958-3D3C-462D-85B5-A46F726B5BBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F7576EE-9A95-4AE6-AFE8-0154E7681B7C}
+	EndGlobalSection
+EndGlobal

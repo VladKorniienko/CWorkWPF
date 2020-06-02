@@ -1,0 +1,16 @@
+﻿<Window x:Class="CWork.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CWork"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="AliceBlue">
+        <Button Content="Solve Branch &amp; Bound" HorizontalAlignment="Left" Margin="35,35,0,0" VerticalAlignment="Top" Height="25" Width="150" Click="BaB_Click"/>
+        <DataGrid Name ="itemsGrid" AutoGenerateColumns="True" ItemsSource="{Binding}" Background="AliceBlue" Margin="204,35,10,217"/>
+        <TextBlock Name ="resultTextBlock" FontSize="14" TextAlignment="Center" Background="LightCyan" Margin="204,10,10,0" Text="Result of the solution will be displayed here" TextWrapping="Wrap" VerticalAlignment="Top" Height="20"/>
+        <DataGrid x:Name ="allItemsGrid" AutoGenerateColumns="True" Background="AliceBlue" ItemsSource="{Binding}" Margin="204,242,10,10"/>
+        <TextBlock FontSize="14" TextAlignment="Center"  Margin="204,222,10,0" Background="LightCyan" Text="All available items" TextWrapping="Wrap" VerticalAlignment="Top" Height="20"/>
+    </Grid>
+</Window>
