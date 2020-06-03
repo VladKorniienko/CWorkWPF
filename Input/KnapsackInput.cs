@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CWork.Entities
+namespace CWork.Entities.Input
 {
     public class KnapsackInput
     {
@@ -16,7 +16,7 @@ namespace CWork.Entities
             Items = new List<Item>();
             for (int y = 1; y <= amountOfItems; y++)
             {
-                Items.Add(new Item(y.ToString(), i * y, j * y + 1));
+                Items.Add(new Item(y.ToString(), i * y + 6, j * y + 1));
             }
         }
 

@@ -5,12 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CWork"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Course Work" Height="600" Width="1000" WindowStartupLocation ="CenterScreen">
     <Grid Background="AliceBlue">
-        <Button Content="Solve Branch &amp; Bound" HorizontalAlignment="Left" Margin="35,35,0,0" VerticalAlignment="Top" Height="25" Width="150" Click="BaB_Click"/>
-        <DataGrid Name ="itemsGrid" AutoGenerateColumns="True" ItemsSource="{Binding}" Background="AliceBlue" Margin="204,35,10,217"/>
-        <TextBlock Name ="resultTextBlock" FontSize="14" TextAlignment="Center" Background="LightCyan" Margin="204,10,10,0" Text="Result of the solution will be displayed here" TextWrapping="Wrap" VerticalAlignment="Top" Height="20"/>
-        <DataGrid x:Name ="allItemsGrid" AutoGenerateColumns="True" Background="AliceBlue" ItemsSource="{Binding}" Margin="204,242,10,10"/>
-        <TextBlock FontSize="14" TextAlignment="Center"  Margin="204,222,10,0" Background="LightCyan" Text="All available items" TextWrapping="Wrap" VerticalAlignment="Top" Height="20"/>
+        <Button Content="Branch &amp; Bound" HorizontalAlignment="Left" Margin="25,35,0,0" VerticalAlignment="Top" Height="25" Width="160" Click="BaB_Click"/>
+
+
+
+
+        <Button Content="Greedy" HorizontalAlignment="Left" Margin="25,65,0,0" VerticalAlignment="Top" Height="25" Width="160" Click="Greedy_Click"/>
+        <Button Content="Randomized" Margin="25,95,0,0" VerticalAlignment="Top" Height="25" Click="Rand_Click" HorizontalAlignment="Left" Width="160"/>
+        <Button Content="Dynamic Programming" HorizontalAlignment="Left" Margin="25,125,0,0" VerticalAlignment="Top" Height="25" Width="160" Click="DP_Click"/>
+        <DockPanel Margin="200,10,10,10" LastChildFill="False">
+            <TextBlock Name ="resultTextBlock" DockPanel.Dock="Top" FontSize="14" TextAlignment="Center" Background="LightCyan"  Text="Result of the solution will be displayed here" TextWrapping="Wrap"  Height="20"/>
+            <DataGrid Name ="itemsGrid" DockPanel.Dock="Top" AutoGenerateColumns="True" ItemsSource="{Binding}" Background="AliceBlue"   />
+            <TextBlock FontSize="14" DockPanel.Dock="Top" TextAlignment="Center"   Background="LightCyan" Text="All available items" TextWrapping="Wrap" Height="25" />
+            <DataGrid Name ="allItemsGrid" DockPanel.Dock="Top" AutoGenerateColumns="True" Background="AliceBlue" ItemsSource="{Binding}"  />
+        </DockPanel>
+        <Button Content="Random items" HorizontalAlignment="Left" Margin="25,217,0,0" VerticalAlignment="Top" Height="25" Width="160" Click="GenerateRandom_Click"/>
+        <Button Content="Items with coefficient" HorizontalAlignment="Left" Margin="25,247,0,0" VerticalAlignment="Top" Height="25" Width="160" Click="GenerateCoeff_Click"/>
+        <Button Content="Data set 1" HorizontalAlignment="Left" Margin="25,277,0,0" VerticalAlignment="Top" Height="25" Width="160" Click="UseSet1_Click"/>
+        <Button Content="Data set 2" HorizontalAlignment="Left" Margin="25,307,0,0" VerticalAlignment="Top" Height="25" Width="160" Click="UseSet2_Click"/>
+        <Button Content="Data set 3" HorizontalAlignment="Left" Margin="25,337,0,0" VerticalAlignment="Top" Height="25" Width="160" Click="UseSet3_Click"/>
+        <Button Content="Input manually" HorizontalAlignment="Left" Margin="25,367,0,0" VerticalAlignment="Top" Height="25" Width="160" Click="InputManually_Click"/>
+        <Button Content="Input from file" HorizontalAlignment="Left" Margin="25,397,0,0" Width="160" Click="InputFile_Click" Height="25" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
