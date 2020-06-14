@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace CWork.Entities.Input
@@ -46,12 +47,35 @@ namespace CWork.Entities.Input
             }
 
         }
-        public void PrintAllItems()
-        {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            foreach(var item in Items)
-                Console.WriteLine(item);
-            Console.ForegroundColor = ConsoleColor.White;
-        }
+        public void ReadInput(string fileName)
+           {
+               var newName = "..\\..\\..\\Input\\InputSamples\\" + fileName;
+
+               try
+               {
+                   using (StreamReader reader = new StreamReader(newName))
+                   {
+                       int count = int.Parse(reader.ReadLine());
+                       for (int i = 0; i < count; i++)
+                       {
+                           var line = reader.ReadLine().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                           var item = new Item
+                           {
+                               Name = line[0],
+                               Value = int.Parse(line[1]),
+                               Weight = int.Parse(line[2])
+                           };
+
+                           Items.Add(item);
+                       }
+                       Capacity = int.Parse(reader.ReadLine());
+                   }
+               }
+               catch (Exception e)
+               {
+                   Console.WriteLine("The file could not be read:");
+                   Console.WriteLine(e.Message);
+               }
+           }
     }
 }

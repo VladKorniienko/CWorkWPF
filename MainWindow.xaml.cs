@@ -1,7 +1,9 @@
 ﻿using CWork.Entities;
 using CWork.Entities.Input;
 using CWork.Solvers;
+using OxyPlot.Wpf;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows;
 
 namespace CWork
@@ -24,11 +26,15 @@ namespace CWork
             }
             else
             {
+                var stopwatch = new Stopwatch();
                 var solver = new BranchAndBoundSolver(input.Items, input.Capacity);
+                stopwatch.Start();
                 var solution = solver.Solve();
+                stopwatch.Stop();
                 itemsGrid.DataContext = solution.Items;
                 allItemsGrid.DataContext = input.Items;
-                resultTextBlock.Text = "Capacity: " + solution.Capacity + ". Total value = " + solution.Value + ". Total weight = " + solution.TotalWeight + ".";
+                resultTextBlock.Text = "Capacity: " + solution.Capacity + ". Total value = " + solution.Value + ". Total weight = "
+                                             + solution.TotalWeight + ". Time: " + stopwatch.Elapsed;
             }
 
         }
@@ -41,11 +47,15 @@ namespace CWork
             }
             else
             {
+                var stopwatch = new Stopwatch();
                 var solver = new GreedySolver(input.Items, input.Capacity);
+                stopwatch.Start();
                 var solution = solver.Solve();
+                stopwatch.Stop();
                 itemsGrid.DataContext = solution.Items;
                 allItemsGrid.DataContext = input.Items;
-                resultTextBlock.Text = "Capacity: " + solution.Capacity + ". Total value = " + solution.Value + ". Total weight = " + solution.TotalWeight + ".";
+                resultTextBlock.Text = "Capacity: " + solution.Capacity + ". Total value = " + solution.Value + ". Total weight = "
+                    + solution.TotalWeight + "." + " Time: " + stopwatch.Elapsed;
             }
 
         }
@@ -57,11 +67,15 @@ namespace CWork
             }
             else
             {
-                var solver = new GreedySolver(input.Items, input.Capacity);
+                var stopwatch = new Stopwatch();
+                var solver = new RandomSolver(input.Items, input.Capacity);
+                stopwatch.Start();
                 var solution = solver.Solve();
+                stopwatch.Stop();
                 itemsGrid.DataContext = solution.Items;
                 allItemsGrid.DataContext = input.Items;
-                resultTextBlock.Text = "Capacity: " + solution.Capacity + ". Total value = " + solution.Value + ". Total weight = " + solution.TotalWeight + ".";
+                resultTextBlock.Text = "Capacity: " + solution.Capacity + ". Total value = " + solution.Value + ". Total weight = "
+                    + solution.TotalWeight + "." + " Time: " + stopwatch.Elapsed;
             }
 
         }
@@ -73,11 +87,15 @@ namespace CWork
             }
             else
             {
+                var stopwatch = new Stopwatch();
                 var solver = new DynamicProgrammingSolver(input.Items, input.Capacity);
+                stopwatch.Start();
                 var solution = solver.Solve();
+                stopwatch.Stop();
                 itemsGrid.DataContext = solution.Items;
                 allItemsGrid.DataContext = input.Items;
-                resultTextBlock.Text = "Capacity: " + solution.Capacity + ". Total value = " + solution.Value + ". Total weight = " + solution.TotalWeight + ".";
+                resultTextBlock.Text = "Capacity: " + solution.Capacity + ". Total value = " + solution.Value + ". Total weight = "
+                    + solution.TotalWeight + "." + " Time: " + stopwatch.Elapsed;
             }
 
         }
@@ -189,10 +207,41 @@ namespace CWork
         private void InputFile_Click(object sender, RoutedEventArgs e)
         {
 
+            var inputFileWindow = new InputFileWindow();
+            if (inputFileWindow.ShowDialog() == true)
+            {
+                input = new KnapsackInput();
 
+                input.ReadInput(inputFileWindow.FileName);
+            }
             allItemsGrid.DataContext = input.Items;
             itemsGrid.DataContext = null;
             resultTextBlock.Text = "Result of the solution will be displayed here";
+        }
+
+        private void Plot_Click(object sender, RoutedEventArgs e)
+        {
+          /*  input = new KnapsackInput();
+            var timeResultsBaB = new List<double>();
+            var timeResultsRand = new List<double>();
+            for (int i = 0; i < 100; i++)
+            {
+                input.GenerateRandomItems();
+                var stopwatch = new Stopwatch();
+                var solverBaB = new GreedySolver(input.Items, input.Capacity);
+                var solverRand = new BranchAndBoundSolver(input.Items,input.Capacity);
+                stopwatch.Start();
+                solverBaB.Solve();
+                stopwatch.Stop();
+                timeResultsBaB.Add(stopwatch.Elapsed.TotalMilliseconds);
+                stopwatch.Restart();
+                solverRand.Solve();
+                timeResultsRand.Add(stopwatch.Elapsed.TotalMilliseconds);
+                stopwatch.Stop();
+            }
+          */
+            var plotWindow = new PlotWindow();
+            plotWindow.ShowDialog();
         }
     }
 }
