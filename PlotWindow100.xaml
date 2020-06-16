@@ -20,6 +20,7 @@
                 <oxy:LineSeries ItemsSource="{Binding timeResultsRand}"/>
                 <oxy:LineSeries Color="Red" ItemsSource="{Binding timeResultsBaB}"/>
                 <oxy:LineSeries Color="Purple" ItemsSource="{Binding timeResultsGreedy}"/>
+                <oxy:LineSeries Color="Orange" ItemsSource="{Binding timeResultsDynamic}"/>
             </oxy:Plot.Series>
             
  

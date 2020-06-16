@@ -19,6 +19,7 @@
                 <oxy:LineSeries ItemsSource="{Binding timeResultsRand1000}"/>
                 <oxy:LineSeries Color="Red" ItemsSource="{Binding timeResultsBaB1000}"/>
                 <oxy:LineSeries Color="Purple" ItemsSource="{Binding timeResultsGreedy1000}"/>
+                <oxy:LineSeries Color="Orange" ItemsSource="{Binding timeResultsDynamic1000}"/>
             </oxy:Plot.Series>
         </oxy:Plot>
     </Grid>
