@@ -28,7 +28,8 @@
         <Button Content="Data set 3" HorizontalAlignment="Left" Margin="25,337,0,0" VerticalAlignment="Top" Height="25" Width="160" Click="UseSet3_Click"/>
         <Button Content="Input manually" HorizontalAlignment="Left" Margin="25,367,0,0" VerticalAlignment="Top" Height="25" Width="160" Click="InputManually_Click"/>
         <Button Content="Input from file" HorizontalAlignment="Left" Margin="25,397,0,0" Width="160" Click="InputFile_Click" Height="25" VerticalAlignment="Top"/>
-        <Button Content="Display plot" HorizontalAlignment="Left" Margin="25,474,0,0" Width="160" Click="Plot_Click" Height="25" VerticalAlignment="Top"/>
+        <Button Content="Display plot for 1000" HorizontalAlignment="Left" Margin="25,474,0,0" Width="160" Click="Plot_Click" Height="25" VerticalAlignment="Top"/>
+        <Button Content="Display plot for 100" HorizontalAlignment="Left" Margin="25,504,0,0" Width="160" Click="Plot_Click100" Height="25" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

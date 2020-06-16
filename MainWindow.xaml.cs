@@ -221,26 +221,12 @@ namespace CWork
 
         private void Plot_Click(object sender, RoutedEventArgs e)
         {
-          /*  input = new KnapsackInput();
-            var timeResultsBaB = new List<double>();
-            var timeResultsRand = new List<double>();
-            for (int i = 0; i < 100; i++)
-            {
-                input.GenerateRandomItems();
-                var stopwatch = new Stopwatch();
-                var solverBaB = new GreedySolver(input.Items, input.Capacity);
-                var solverRand = new BranchAndBoundSolver(input.Items,input.Capacity);
-                stopwatch.Start();
-                solverBaB.Solve();
-                stopwatch.Stop();
-                timeResultsBaB.Add(stopwatch.Elapsed.TotalMilliseconds);
-                stopwatch.Restart();
-                solverRand.Solve();
-                timeResultsRand.Add(stopwatch.Elapsed.TotalMilliseconds);
-                stopwatch.Stop();
-            }
-          */
             var plotWindow = new PlotWindow();
+            plotWindow.ShowDialog();
+        }
+        private void Plot_Click100(object sender, RoutedEventArgs e)
+        {
+            var plotWindow = new PlotWindow100();
             plotWindow.ShowDialog();
         }
     }

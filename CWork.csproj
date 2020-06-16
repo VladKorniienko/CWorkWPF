@@ -16,4 +16,16 @@
     <Folder Include="Input\InputSamples\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="PlotWindow100.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="PlotWindow100.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
 </Project>
