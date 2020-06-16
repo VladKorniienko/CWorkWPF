@@ -126,17 +126,13 @@ namespace CWork
         {
             input = new KnapsackInput()
             {
-                Capacity = 25,
+                Capacity = 10,
                 Items = new List<Item>()
                  {
-                    new Item { Name = "1", Weight = 2, Value = 4 },
-                    new Item { Name = "2", Weight = 4,  Value = 7 },
-                    new Item { Name = "3", Weight = 6, Value = 10 },
-                    new Item { Name = "4", Weight = 8, Value = 13 },
-                    new Item { Name = "5", Weight = 10, Value = 16 },
-                    new Item { Name = "6", Weight = 12, Value = 19 },
-                    new Item { Name = "7", Weight = 14, Value = 22 },
-                    new Item { Name = "8", Weight = 16, Value = 25 }
+                    new Item { Name = "1", Weight = 4, Value = 40 },
+                    new Item { Name = "2", Weight = 7,  Value = 42 },
+                    new Item { Name = "3", Weight = 5, Value = 25 },
+                    new Item { Name = "4", Weight = 3, Value = 12 }
                  }
             };
 
@@ -149,13 +145,14 @@ namespace CWork
         {
             input = new KnapsackInput()
             {
-                Capacity = 10,
+                Capacity = 16,
                 Items = new List<Item>()
                 {
-                     new Item() { Name = "1", Value = 40, Weight = 4 },
-                     new Item() { Name = "2", Value = 42, Weight = 7 },
-                     new Item() { Name = "3", Value = 25, Weight = 5 },
-                     new Item() { Name = "4", Value = 12, Weight = 3 }
+                     new Item() { Name = "1", Value = 50, Weight = 5 },
+                     new Item() { Name = "2", Value = 99, Weight = 9 },
+                     new Item() { Name = "3", Value = 18, Weight = 2 },
+                     new Item() { Name = "4", Value = 15, Weight = 3 },
+                     new Item() { Name = "5", Value = 42, Weight = 7 }
                 }
             };
 
